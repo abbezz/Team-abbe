@@ -3,9 +3,6 @@ const exphbs = require('express-handlebars');
 const session = require("express-session");
 const bodyParser = require('body-parser');
 const Handlebars = require("handlebars");
-const {
-  allowInsecurePrototypeAccess,
-} = require("@handlebars/allow-prototype-access");
 
 
 const path = require('path');
@@ -17,8 +14,6 @@ require('dotenv').config();
 (async () => {
     await db.sequelize.sync();
 })();
-
-app.use(session(sess));
 
 //Handlebars (non Handlebars bug requires InsecurePrototypeAccess to work)
 app.engine(
