@@ -1,8 +1,8 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
+const handlebars = require('express-handlebars');
 const session = require("express-session");
 const bodyParser = require('body-parser');
-const Handlebars = require("handlebars");
+
 
 
 const path = require('path');
@@ -15,16 +15,20 @@ require('dotenv').config();
     await db.sequelize.sync();
 })();
 
-//Handlebars (non Handlebars bug requires InsecurePrototypeAccess to work)
-app.engine(
-  "handlebars",
-  exphbs.engine({
-    handlebars: allowInsecurePrototypeAccess(Handlebars),
-    defaultLayout: "main",
-  })
-);
-app.set("view engine", "handlebars");
+app.set('view engine', 'hbs');
 
+app.engine('hbs', handlebars({
+  layoutsDir: `$(__dirname}/views/layouts`,
+  extname: 'hbs',
+  defaultLayout: 'index'
+}));
+
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+  res.render('main');
+
+});
 
 const app = express();
 
