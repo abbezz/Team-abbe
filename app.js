@@ -1,7 +1,12 @@
 const express = require('express');
-const handlebars = require('express-handlebars');
+const { engine } = require('express-handlebars')
 const session = require("express-session");
 const bodyParser = require('body-parser');
+const Handlebars = require("handlebars");
+const {
+  allowInsecurePrototypeAccess,
+} = require("@handlebars/allow-prototype-access");
+
 
 
 
@@ -15,10 +20,11 @@ require('dotenv').config();
     await db.sequelize.sync();
 })();
 
+const app = express();
 app.set('view engine', 'hbs');
 
-app.engine('hbs', handlebars({
-  layoutsDir: `$(__dirname}/views/layouts`,
+app.engine('hbs', engine({
+  layoutsDir: `${__dirname}/views/layouts`,
   extname: 'hbs',
   defaultLayout: 'index'
 }));
@@ -30,7 +36,6 @@ app.get('/', (req, res) => {
 
 });
 
-const app = express();
 
 const PORT = process.env.PORT || 5000;
 
