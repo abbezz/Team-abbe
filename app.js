@@ -2,11 +2,6 @@ const express = require('express');
 const { engine } = require('express-handlebars')
 const session = require("express-session");
 const bodyParser = require('body-parser');
-const Handlebars = require("handlebars");
-const {
-  allowInsecurePrototypeAccess,
-} = require("@handlebars/allow-prototype-access");
-
 
 
 
@@ -14,6 +9,7 @@ const path = require('path');
 const db = require('./models');
 
 require('dotenv').config();
+
 
 // Get the table
 (async () => {
@@ -24,17 +20,55 @@ const app = express();
 app.set('view engine', 'hbs');
 
 app.engine('hbs', engine({
-  layoutsDir: `${__dirname}/views/layouts`,
   extname: 'hbs',
-  defaultLayout: 'index'
+  defaultLayout: 'main',
+  layoutsDir:__dirname + '/views/layouts',
+  partialsDir:__dirname + '/views/partials',
 }));
 
-app.use(express.static('public'));
+// Set static folder
+app.use(express.static(path.join(__dirname, "public")));
+
+// Body Parser
+app.use(express.json({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+
+
+
+
+// Landing page
 
 app.get('/', (req, res) => {
-  res.render('main');
+  res.render('index');
 
 });
+
+app.get('/login', (req, res) => {
+  res.render('login');
+
+});
+
+app.get('/hadith', (req, res) => {
+  res.render('hadith');
+
+});
+
+app.get('/search', (req, res) => {
+  res.render('search');
+
+
+
+});
+
+
+app.get('/Get In Touch', (req, res) => {
+  res.render('Get In Touch');
+
+});
+
+
+
+
 
 
 const PORT = process.env.PORT || 5000;

@@ -1,0 +1,31 @@
+<nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/hadith">hadith</a>
+        </li>
+         <li>
+          <a href="/dashboard">dashboard</a>
+        </li>
+        <li>
+          <a href="/Get In Touch">Get In Touch</a>
+        </li>
+        {{#if logged_in}}
+        <li>
+          <a href="/"></a>
+        </li>
+        {{/if}}
+        {{#if logged_in}}
+        <li>
+          <a id="logout" href="#">Logout</a>
+        </li>
+        {{else}}
+         <li>
+          <a href="/login">Login</a>
+        </li>
+        
+        {{/if}}
+      </ul>
+    </nav>
