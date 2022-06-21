@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 :root {
-  --primary-color: black;
-  --primary-hover-color: black;
-  --bg-color: rgb(24, 33, 24);
+  --primary-color: hsl(0, 2%, 25%);
+  --primary-hover-color: silver;
+  --bg-color: rgb(0, 0, 0);
   --box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.7);
 }
 
@@ -105,7 +105,7 @@ header.inner {
   border: 1px solid var(--primary-hover-color);
 }
 body {
-  background-image: url("img/mecca.png"); 
+  background-image: url("/img/islam.jpg"); 
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -577,3 +577,4 @@ h6 span{
 
 
 
+/* This is Get in Touch css */

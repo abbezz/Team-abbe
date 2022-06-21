@@ -61,8 +61,8 @@ app.get('/search', (req, res) => {
 });
 
 
-app.get('/Get In Touch', (req, res) => {
-  res.render('Get In Touch');
+app.get('/touch', (req, res) => {
+  res.render('touch');
 
 });
 
