@@ -66,6 +66,11 @@ app.get('/touch', (req, res) => {
 
 });
 
+app.get('/vers', (req, res) => {
+  res.render('vers');
+
+});
+
 
 
 

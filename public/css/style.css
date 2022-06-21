@@ -577,4 +577,17 @@ h6 span{
 
 
 
-/* This is Get in Touch css */
+
+.button {
+  background-color: #1c87c9;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 15px 15px;
+  cursor: pointer;
+}
+
