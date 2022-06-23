@@ -9,7 +9,7 @@ module.exports = {
             username,
             password
         });
-        res.render('login', { Email });
+        res.render('profile', { username });
       } else {
         res.send('Not added to the database!');
       }
