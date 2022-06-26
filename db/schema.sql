@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS my-express-app;
+
+-- CREATE DATABASE
+CREATE DATABASE my-express-app;

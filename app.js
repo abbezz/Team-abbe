@@ -1,11 +1,10 @@
 const express = require('express');
 const { engine } = require('express-handlebars')
 const session = require("express-session");
+const routes = require("./controllers");
 const bcrypt = require('bcrypt')
-const passport = require('passport')
-const flash = require('express-flash')
 const bodyParser = require('body-parser');
-const methodOverride = require('method-override')
+
 
 
 const path = require('path');
@@ -13,15 +12,9 @@ const db = require('./models');
 
 require('dotenv').config();
 
-const initializePassport = require('./passport-config')
-initializePassport(
-  passport,
-  email => users.find(user => user.email === email),
-  id => users.find(user => user.id === id)
-)
+//database
+const sequelize = require("./config/db-config");
 
-
-const users = []
 
 
 const app = express();
@@ -52,46 +45,12 @@ app.get('/', (req, res) => {
   res.render('index');
 
 });
-/////////////////Login
 
-app.get('/login', (req, res) => {
-  res.render('login');
 
-});
-
-app.post('/login', (req, res) => {
-
+app.get('/login',  (req, res) => {
+  res.render('login')
 })
 
-app.get('/register', (req, res) => {
-  res.render('register');
-
-});
-
-app.post('/register', async (req, res) => {
-  try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10)
-    users.push({
-      id: Date.now().toString(),
-      name: req.body.name,
-      email: req.body.email,
-      password: hashedPassword
-    })
-    res.redirect('/login')
-  } catch {
-    res.redirect('/register')
-  }
- 
-})
-
-// Hadith
-
-app.use(flash())
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
-}))
 
 
 app.get('/hadith', (req, res) => {
