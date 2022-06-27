@@ -1,46 +1,45 @@
-<br>
-<h1> Create a free account to get started!</h1>
-<br>
+
 <div class="row">
-	<div class="col-md-6">
-	  <h2 style="padding: 1rem;">Login</h2>
-	  <form id ="login" class="form login-form">
-		<div class="form-group">
-		  <label for="email-login">Email Address:</label>
-		  <input class="form-input" type="text" id="email-login" />
-		</div>
-		<div class="form-group">
-		  <label for="password-login">Password:</label>
-		  <input class="form-input" type="password" id="password-login" />
-		</div>
-		<div class="form-group">
-		  <button class="btn btn-primary" type="submit">LOGIN</button>
-		</div>
-	  </form>
-	</div>
-	<div class="col-md-6">
-	  <h2 style="padding: 1rem;">Sign-up</h2>
-	  <form class="form signup-form">
-		<div class="form-group">
-		  <label class = "boxes" for="name-signup">Username:</label>
-		  <input class="form-input" type="text" id="name-signup" />
-		</div>
-		<div class="form-group">
-		  <label class = "boxes" for="email-signup">Email Address:</label>
-		  <input class="form-input" type="text" id="email-signup" />
-		</div>
-		<div class="form-group">
-		  <label class = "boxes" for="password-signup">Password:</label>
-		  <input class="form-input" type="password" id="password-signup" />
-		</div>
-		<div class="form-group">
-		  <button class="btn btn-primary" type="submit">SIGN-UP</button>
-		</div>
-	  </form>
-	</div>
+  <div class="col-md-6">
+    <h2>Login</h2>
+
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">Email:</label>
+        <input class="form-control border border-dark" type="email" id="email-login" />
+      <div id="login-email">
+      </div>
+      </div>
+      <div class="form-outline mb-4">
+        <label for="password-login">Password:</label>
+        <input class="form-control border border-dark" type="password" id="password-login" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-warning border border-warning" type="submit">Login</button>
+      </div>
+    </form>
   </div>
+  <div class="col-md-6">
+    <h2>Sign-Up</h2>
+
+    <form class="form signup-form">
+      <div class="form-group">
+        <label for="name-signup">Name:</label>
+        <input class="form-control border border-dark" type="text" id="name-signup" />
+      </div>
+      <div class="form-outline mb-4">
+        <label for="email-signup">Email:</label>
+        <input class="form-control border border-dark" type="text" id="email-signup" />
+      </div>
+      <div class="form-outline mb-4">
+        <label for="password-signup">Password:</label>
+        <input class="form-control border border-dark" type="password" id="password-signup" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary border border-primary" type="submit">Signup</button>
+      </div>
+    </form>
   </div>
-  </div>
-  </div>
-  </div>
-  <script src="/js/login.js"></script>
+</div>
+
+<script src="../js/login.js"></script>
