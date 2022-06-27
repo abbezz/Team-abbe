@@ -15,4 +15,3 @@ sequelize.authenticate().then(() => {
 
 
 console.log("Another task");
-

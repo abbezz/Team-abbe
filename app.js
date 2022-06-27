@@ -2,21 +2,23 @@ const path = require('path');
 const express = require('express');
 const { engine } = require('express-handlebars')
 const session = require("express-session");
-const routes = require("./controllers");
 const bcrypt = require('bcrypt')
 const bodyParser = require('body-parser');
 
 
-const db = require('./models');
 
 require('dotenv').config();
 
+
+
+
 //database
-const sequelize = require("./config/database");
+const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 const app = express();
+
 
 
 
@@ -28,6 +30,9 @@ app.engine('hbs', engine({
   layoutsDir:__dirname + '/views/layouts',
   partialsDir:__dirname + '/views/partials',
 }));
+
+
+
 
 
 
@@ -44,8 +49,8 @@ app.get('/login',  (req, res) => {
   res.render('login')
 })
 
-app.get('/signup',  (req, res) => {
-  res.render('signup')
+app.get('/Login',  (req, res) => {
+  res.render('Login')
 })
 
 
@@ -78,7 +83,7 @@ app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use(routes);
+
 
 const PORT = process.env.PORT || 5000;
 

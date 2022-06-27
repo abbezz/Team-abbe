@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
-const sequelize = require("../config/database");
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -35,8 +35,6 @@ User.init(
         len: [8],
       },
     },
-    // Need a kg / lbs category like in the exercise record. Want user to be able to check / change it.
-    // Want a Date of Birth form at sign up?
   },
   {
     hooks: {
@@ -45,10 +43,7 @@ User.init(
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(
-          updatedUserData.password,
-          10
-        );
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
       },
     },
@@ -56,7 +51,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: 'user',
   }
 );
 
