@@ -1,8 +1,6 @@
 function sendEmail(){
     Email.send({
-        Host : "smtp.gmail.com",
-        Username : "abbezz@live.com",
-        Password : "413FDFB0BA8FE424E06906AC7E0F3D5083B3",
+        SecureToken: "4729bb6d-83dd-45d7-add4-02b04048f47e",
         To : 'abbezz@live.com',
         From : document.getElementById("email").value,
         Subject : "New Contact From Enquiry",
@@ -14,5 +12,6 @@ function sendEmail(){
     message => alert("Message Sent Succesfully")
     );
 }
+
 
 <script src=" https://smtpjs.com/v3/smtp.js"></script>
