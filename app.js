@@ -75,7 +75,6 @@ app.get('/touch', (req, res) => {
 
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
-
 app.use(express.json());
 
 // Body Parser

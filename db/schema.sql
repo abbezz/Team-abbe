@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS abbe-express-app;
+DROP DATABASE IF EXISTS abbeexpress;
 
 -- CREATE DATABASE
-CREATE DATABASE abbe-express-app;
+CREATE DATABASE abbeexpress;
 
-USE abbe-express-app;
+USE abbeexpress;
