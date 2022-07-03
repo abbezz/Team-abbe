@@ -2,8 +2,8 @@ const path = require('path');
 const express = require('express');
 const { engine } = require('express-handlebars')
 const session = require("express-session");
-const mysql = require("mysql");
 const dotenv = require('dotenv');
+const mysql = require("mysql");
 const bodyParser = require('body-parser');
 
 
@@ -14,6 +14,8 @@ require('dotenv').config();
 
 
 
+
+
 const db = mysql.createConnection({
   host: process.env.DATABASE_HOST,
   user: process.env.DATABASE_USER,
@@ -21,15 +23,15 @@ const db = mysql.createConnection({
   database: process.env.DATABASE
 });
 
-
-
+  
 db.connect( (error) => {
   if(error) {
     console.log(error)
   } else {
     console.log("MYSQL Connected...")
 }
-})
+});
+
 
 
 
@@ -68,14 +70,14 @@ app.get('/login',  (req, res) => {
   res.render('login')
 })
 
-app.get('/Login',  (req, res) => {
-  res.render('Login')
-})
-
-
 
 app.get('/hadith', (req, res) => {
   res.render('hadith');
+
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
 
 });
 
@@ -98,14 +100,19 @@ app.get('/touch', (req, res) => {
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
-// Parse JSON bodies (as sent by API clients)
-app.use(express.json());
+
+
 
 
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({ extended: false }));
 app.use('/auth', require('./routes/auth'));
+
+// Parse JSON bodies (as sent by API clients)
+app.use(express.json());
+
+
 
 
 
