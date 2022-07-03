@@ -3,7 +3,6 @@ const express = require('express');
 const { engine } = require('express-handlebars')
 const session = require("express-session");
 const mysql = require("mysql");
-const bcrypt = require('bcrypt')
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 
