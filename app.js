@@ -13,12 +13,16 @@ dotenv.config({ path: './.env'})
 
 require('dotenv').config();
 
+
+
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
+  host: process.env.DATABASE_HOST,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE
 });
+
+
 
 db.connect( (error) => {
   if(error) {
@@ -27,6 +31,8 @@ db.connect( (error) => {
     console.log("MYSQL Connected...")
 }
 })
+
+
 
 
 
@@ -92,11 +98,15 @@ app.get('/touch', (req, res) => {
 
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
+
+// Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
-// Body Parser
-app.use(express.json({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
+
+
+// Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded({ extended: false }));
+app.use('/auth', require('./routes/auth'));
 
 
 

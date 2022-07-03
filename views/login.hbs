@@ -21,7 +21,7 @@
   <div class="col-md-6">
     <h2>Sign-Up</h2>
 
-    <form class="form signup-form">
+    <form action="/auth/login" method="POST">
       <div class="form-group">
         <label for="name-signup">Name:</label>
         <input class="form-control border border-dark" type="text" id="name-signup" />
@@ -32,8 +32,14 @@
       </div>
       <div class="form-outline mb-4">
         <label for="password-signup">Password:</label>
-        <input class="form-control border border-dark" type="password" id="password-signup" />
+        <input type="password" class="form-control" id="password" name="password">
       </div>
+
+      <div class="form-outline mb-4">
+        <label for="passwordConfirm">Confirm Password</label>
+        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+      </div>
+
       <div class="form-group">
         <button class="btn btn-primary border border-primary" type="submit">Signup</button>
       </div>
