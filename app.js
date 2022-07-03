@@ -2,22 +2,36 @@ const path = require('path');
 const express = require('express');
 const { engine } = require('express-handlebars')
 const session = require("express-session");
+const mysql = require("mysql");
 const bcrypt = require('bcrypt')
+const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 
 
 
+dotenv.config({ path: './.env'})
+
 require('dotenv').config();
 
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: process.env.DATABASE
+});
 
+db.connect( (error) => {
+  if(error) {
+    console.log(error)
+  } else {
+    console.log("MYSQL Connected...")
+}
+})
 
-
-//database
-const sequelize = require("./config/connection");
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 const app = express();
+   
 
 
 
@@ -66,6 +80,9 @@ app.get('/search', (req, res) => {
 
 
 });
+
+
+
 
 
 app.get('/touch', (req, res) => {

@@ -1,17 +1,14 @@
-
-const Sequelize = require("sequelize");
-
-const sequelize =  new Sequelize('my-express-app', 'root', '821010', {
+const db = mysql.createConnection({
   host: 'localhost',
-  port: 3306,
-  dialect: 'mysql'
+  user: 'root',
+  password: '',
+  database: 'nodejs-login'
 });
 
-sequelize.authenticate().then(() => {
-  console.log("Connection successful");
-}).catch((err) => {
- console.log("Error connecting to database!");
-});
-
-
-console.log("Another task");
+db.connect( (error) => {
+  if(error) {
+    console.log(error)
+  } else {
+    console.log("MYSQL Connected...")
+}
+})
