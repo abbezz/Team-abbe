@@ -59,4 +59,4 @@ Screenshot of Application:
 
 ## Contact
 
-Github Profile: [Abbezz](https://github.com/Corey96)
+Github Profile: [Abbezz] https://github.com/abbezz/
