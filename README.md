@@ -48,8 +48,11 @@ When a user enters our application, they are initially presented the homepage - 
 
 ## Examples
 
-Screenshot of Application:
-![Project 2 img](https://user-images.githubusercontent.com/94430401/177069663-d144b38b-6863-4e33-8936-22d993bdf22a.png)
+Screenshot of Application:!
+
+
+![Project 2 img]
+[Untitled](https://user-images.githubusercontent.com/94430401/178649241-e9a9508f-f7f4-4ea8-a0c3-fa6976050ca4.png)
 
 
 
