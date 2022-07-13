@@ -52,7 +52,7 @@ Screenshot of Application:!
 
 
 
-[Untitled](https://user-images.githubusercontent.com/94430401/178649241-e9a9508f-f7f4-4ea8-a0c3-fa6976050ca4.png)
+user-images.githubusercontent.com/94430401/178649241-e9a9508f-f7f4-4ea8-a0c3-fa6976050ca4.png)
 
 
 
