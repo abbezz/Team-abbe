@@ -44,7 +44,7 @@ When a user enters our application, they are initially presented the homepage - 
 * Sequelize
 * Bootstrap
 * bcryptjs
-* jsonwebtoken
+
 
 ## Examples
 
@@ -52,8 +52,8 @@ Screenshot of Application:!
 
 
 
-user-images.githubusercontent.com/94430401/178649241-e9a9508f-f7f4-4ea8-a0c3-fa6976050ca4.png)
 
+![Untitled](https://user-images.githubusercontent.com/94430401/178649436-643be807-9844-4105-a428-e222e785bff5.png)
 
 
 ## Heroku
