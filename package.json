@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "none",
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon server.js",
+    "seed": "node seeds/seed.js"
   },
+    
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abbezz/Team-abbe.git"
@@ -21,7 +22,7 @@
   "homepage": "https://github.com/abbezz/Team-abbe#readme",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "connect-session-sequelize": "^7.1.4",
     "cookie-parser": "^1.4.6",
@@ -30,7 +31,6 @@
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^8.5.1",
-    "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "pg": "^8.7.3",
     "sequelize": "^6.20.1"
