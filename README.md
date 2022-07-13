@@ -51,7 +51,7 @@ When a user enters our application, they are initially presented the homepage - 
 Screenshot of Application:!
 
 
-![Project 2 img]
+
 [Untitled](https://user-images.githubusercontent.com/94430401/178649241-e9a9508f-f7f4-4ea8-a0c3-fa6976050ca4.png)
 
 
